@@ -21,7 +21,7 @@
     "juggernaut": "./server.js"
   },
   "dependencies": {
-    "socket.io": "=0.9.17",
+    "socket.io": "=0.9.19",
     "redis": "~1.0.0",
     "optimist": "~0.2.3"
   }
