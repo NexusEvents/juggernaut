@@ -8202,10 +8202,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 var Juggernaut = function(options){
   this.options = options || {};
-  
+
   this.options.host = this.options.host || window.location.hostname;
-  this.options.port = this.options.port || 8080;
-  
+
+  // Backwards compatible default port
+  if (this.options.port === undefined) {
+    this.options.port = 8080;
+  }
+
+  // v1+ of socketio does not take a port option. Include port in url string
+  if (this.options.port) {
+    this.options.host = this.options.host + ':' + this.options.port;
+  }
+
   this.handlers = {};
   this.meta     = this.options.meta;
 
