@@ -69,7 +69,7 @@ Juggernaut.fn.subscribe = function(channel, callback){
     this.write(message);
   });
 
-  if (this.io.socket.connected)
+  if (this.io.connected)
     connectCallback();
   else {
     this.on("connect", connectCallback);
