@@ -8312,7 +8312,7 @@ Juggernaut.fn.writeMeta = function(){
 };
 
 Juggernaut.fn.onconnect = function(){
-  this.sessionID = this.io.socket.sessionid;
+  this.sessionID = this.io.id;
   this.trigger("connect");
 };
 
